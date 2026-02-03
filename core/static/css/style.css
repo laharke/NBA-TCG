@@ -1,0 +1,67 @@
+body.nba-bg {
+    background: radial-gradient(circle at top, #1d428a, #000);
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+.nba-card {
+  width: 360px;
+  background: #111;
+  border: 2px solid #c8102e;
+  box-shadow: 0 0 20px rgba(200,16,46,.6);
+}
+
+.nba-title {
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.form-control {
+  background: #222;
+  border: 1px solid #444;
+  color: #fff;
+}
+
+.form-control:focus {
+  background: #222;
+  color: #fff;
+  border-color: #c8102e;
+  box-shadow: none;
+}
+
+/* ========================= DASHBOARD ========================= */
+.dashboard {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #0b1c2d; 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 3px solid #c9082a;
+}
+
+.dashboard a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+
+body {
+  background: radial-gradient(circle at top, #1d428a, #22127e);
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+}
+
+
+.pack-img {
+  width: 350px;
+  transition: transform 0.3s ease;
+}
+
+.pack-card {
+  cursor: pointer;
+}

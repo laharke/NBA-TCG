@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}Dashboard | NBA TCG{% endblock %}
+
+
+{% block content %}
+<div class="packs-view text-center">
+    <div id="packsCarousel" class="carousel slide" data-bs-interval="false">
+        
+      <div class="carousel-inner">
+  
+        <div class="carousel-item active">
+          <div class="pack-card" data-pack="basic">
+            <img src="{% static 'imgs/packs/bluebooster.png' %}" class="d-block mx-auto pack-img">
+            <h5 class="mt-2">Basic</h5>
+          </div>
+        </div>
+  
+        <div class="carousel-item">
+          <div class="pack-card" data-pack="premium">
+            <img src="{% static 'imgs/packs/goldenbooster.png' %}" class="d-block mx-auto pack-img">
+            <h5 class="mt-2">Premium</h5>
+          </div>
+        </div>
+  
+        <div class="carousel-item">
+          <div class="pack-card" data-pack="legendary">
+            <img src="{% static 'imgs/packs/redbooster.png' %}" class="d-block mx-auto pack-img">
+            <h5 class="mt-2">Legendary</h5>
+          </div>
+        </div>
+  
+      </div>
+  
+      <button class="carousel-control-prev" type="button" data-bs-target="#packsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+  
+      <button class="carousel-control-next" type="button" data-bs-target="#packsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  
+    <button id="open-pack" class="btn btn-primary mt-4">
+      Abrir Pack
+    </button>
+  
+</div>
+    
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/packs.js' %}"></script>
+{% endblock %}
