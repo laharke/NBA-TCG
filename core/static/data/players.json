@@ -1,0 +1,250 @@
+[
+    {
+      "id": 1,
+      "name": "LeBron James",
+      "image": "../imgs/players/lebron.jpg",
+      "team": "Lakers",
+      "border1": "#22276b",
+      "border2": "#cba91b",
+      "rarity": "Legendary"
+    },
+    {
+      "id": 2,
+      "name": "Stephen Curry",
+      "image": "../imgs/players/curry.jpg",
+      "team": "Lakers",
+      "rarity": "Legendary"
+    },
+    {
+      "id": 3,
+      "name": "Kevin Durant",
+      "image": "../imgs/players/durant.jpeg",
+      "team": "Lakers",
+      "rarity": "Legendary"
+    },
+    {
+      "id": 4,
+      "name": "Giannis Antetokounmpo",
+      "image": "../imgs/players/giannis.jpeg",
+      "team": "Lakers",
+      "rarity": "Legendary"
+    },
+    {
+      "id": 5,
+      "name": "Kawhi Leonard",
+      "image": "../imgs/players/leonard.jpg",
+      "team": "Lakers",
+      "rarity": "Legendary"
+    },
+    {
+      "id": 6,
+      "name": "Luka Dončić",
+      "image": "../imgs/players/doncic.jpg",
+      "team": "Lakers",
+      "rarity": "Legendary"
+    },
+    {
+      "id": 7,
+      "name": "Joel Embiid",
+      "image": "../imgs/players/embiid.jpg",
+      "team": "Lakers",
+      "rarity": "Rare"
+    },
+    {
+      "id": 8,
+      "name": "Nikola Jokić",
+      "image": "../imgs/players/jokic.jpg",
+      "team": "Lakers",
+      "rarity": "Legendary"
+    },
+    {
+      "id": 9,
+      "name": "Damian Lillard",
+      "image": "../imgs/players/lillard.jpg",
+      "team": "Lakers",
+      "rarity": "Rare"
+    },
+    {
+      "id": 10,
+      "name": "Zion Williamson",
+      "image": "../imgs/players/zion.jpg",
+      "team": "Lakers",
+      "rarity": "Common"
+    },
+    {
+        "id": 11,
+        "name": "Kareem Abdul-Jabbar",
+        "image": "../imgs/players/kareem.jpeg",
+        "team": "Lakers",
+        "rarity": "Legendary"
+    },
+    {
+        "id": 12,
+        "name": "Larry Bird",
+        "image": "../imgs/players/larrybird.jpg",
+        "team": "Lakers",
+        "rarity": "Legendary"
+    },
+    {
+        "id": 13,
+        "name": "Kobe Bryant",
+        "image": "../imgs/players/kobe.jpg",
+        "team": "Lakers",
+        "rarity": "Legendary"
+    },
+    {
+        "id": 14,
+        "name": "Tim Duncan",
+        "image": "../imgs/players/timduncan.jpg",
+        "team": "Lakers",
+        "rarity": "Legendary"
+    },
+    {
+        "id": 15,
+        "name": "Dirk Nowitzki",
+        "image": "../imgs/players/DirkNowitzki.jpg",
+        "team": "Lakers",
+        "rarity": "Legendary"
+    },
+    {
+        "id": 16,
+        "name": "Hakeem Olajuwon",
+        "image": "../imgs/players/olajuwon.jpg",
+        "team": "Lakers",
+        "rarity": "Legendary"
+    },
+    {
+        "id": 17,
+        "name": "Karl Malone",
+        "image": "../imgs/players/malone.jpg",
+        "team": "Lakers",
+        "rarity": "Legendary"
+    },
+    {
+        "id": 18,
+        "name": "Michael Jordan",
+        "image": "../imgs/players/jordan.jpg",
+        "team": "Lakers",
+        "rarity": "Legendary"
+    },
+    {
+        "id": 19,
+        "name": "Shaquille O'Neal",
+        "image": "../imgs/players/shaq.jpeg",
+        "team": "Lakers",
+        "rarity": "Legendary"
+    },
+    {
+        "id": 20,
+        "name": "Charles Barkley",
+        "image": "../imgs/players/barkley.jpeg",
+        "team": "Lakers",
+        "rarity": "Legendary"
+    },
+    {
+        "id": 21,
+        "name": "James Harden",
+        "image": "../imgs/players/jamesharden.jpg",
+        "team": "Lakers",
+        "rarity": "Rare"
+    },
+    {
+        "id": 22,
+        "name": "Anthony Edwards",
+        "image": "../imgs/players/edwards.jpg",
+        "team": "Lakers",
+        "rarity": "Rare"
+    },
+    {
+        "id": 23,
+        "name": "Kyrie Irving",
+        "image": "../imgs/players/kyrieirving.jpg",
+        "team": "Lakers",
+        "rarity": "Rare"
+    },
+    {
+        "id": 24,
+        "name": "Devin Booker",
+        "image": "../imgs/players/booker.jpeg",
+        "team": "Lakers",
+        "rarity": "Rare"
+    },
+    {
+        "id": 25,
+        "name": "Mikal Bridges",
+        "image": "../imgs/players/bridges.jpeg",
+        "team": "Lakers",
+        "rarity": "Common"
+    },
+    {
+        "id": 26,
+        "name": "Harrison Barnes",
+        "image": "../imgs/players/barnes.jpg",
+        "team": "Lakers",
+        "rarity": "Common"
+    },
+    {
+        "id": 27,
+        "name": "Nicolas Batum",
+        "image": "../imgs/players/batum.jpg",
+        "team": "Lakers",
+        "rarity": "Common"
+    },
+    {
+        "id": 28,
+        "name": "Bam Adebayo",
+        "image": "../imgs/players/adebayo.jpg",
+        "team": "Lakers",
+        "rarity": "Common"
+    },
+    {
+        "id": 29,
+        "name": "Tyler Hero",
+        "image": "../imgs/players/tylerhero.jpeg",
+        "team": "Lakers",
+        "rarity": "Common"
+    },
+    {
+        "id": 30,
+        "name": "Jason Williams",
+        "image": "../imgs/players/jasonwilliams.jpg",
+        "team": "Lakers",
+        "rarity": "Common"
+    },
+    {
+        "id": 31,
+        "name": "Kevin Love",
+        "image": "../imgs/players/klove.jpeg",
+        "team": "Lakers",
+        "rarity": "Common"
+    },
+    {
+        "id": 32,
+        "name": "Steve Nash",
+        "image": "../imgs/players/nash.jpg",
+        "team": "Lakers",
+        "rarity": "Common"
+    },
+    {
+        "id": 33,
+        "name": "John Stockton",
+        "image": "../imgs/players/stockton.jpg",
+        "team": "Lakers",
+        "rarity": "Common"
+    },
+    {
+        "id": 34,
+        "name": "Pau Gasol",
+        "image": "../imgs/players/paugasol.jpg",
+        "team": "Lakers",
+        "rarity": "Common"
+    },
+    {
+        "id": 35,
+        "name": "Marc Gasol",
+        "image": "../imgs/players/marcgasol.jpg",
+        "team": "Memphis",
+        "rarity": "Common"
+    }
+
+]

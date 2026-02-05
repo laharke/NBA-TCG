@@ -62,10 +62,13 @@ def register_view(request):
         )
 
         login(request, user)  # auto-login después de registrarse
-        return redirect("home")  # o donde quieras
+        return redirect("home")  
 
     return render(request, "register.html")
 
 def pack_view(request):
 
     return render(request, "packs.html")
+
+def duel_view(request):
+    return render(request, 'duel.html')

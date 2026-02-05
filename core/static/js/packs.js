@@ -10,4 +10,17 @@ const packType = activeItem.querySelector('.pack-card').dataset.pack;
 
     // después:
     // fetch('/api/open-pack/', { method: 'POST', body: ... })
+    // necesito un json.players, queiro que tenga solo 10 jugadores como ejemplo, en este json voy a tener, id, nombre, rareza, img 
+
+    const card = document.createElement('nba-card');
+
+    card.setAttribute('number', '34');
+    card.setAttribute('name', 'Giannis Antetokounmpo');
+    card.setAttribute('rarity', 'legendary');
+    card.setAttribute('image', '/static/imgs/cards/giannis.png');
+    card.setAttribute('team-logo', '/static/imgs/teams/bucks.png');
+
+    //document.querySelector('#cards-container').appendChild(card);
+
+    
 });
