@@ -8,6 +8,7 @@ class NBACard extends HTMLElement {
       const number = this.getAttribute('number') || '0';
       const name = this.getAttribute('name') || 'Unknown';
       const rarity = this.getAttribute('rarity') || 'common';
+      const holo = this.getAttribute('holo') || 'holo';
       const image = this.getAttribute('image');
       const teamLogo = this.getAttribute('team-logo');
 
@@ -31,6 +32,56 @@ class NBACard extends HTMLElement {
 
           .nba-card {
             background: linear-gradient(135deg, ${border1}, ${border2});
+          }
+
+
+          .common { box-shadow: 0 0 20px 7px  #aaa; }
+          .rare { box-shadow: 0 0 20px 7px  #2168db; }
+          .epic { box-shadow: 0 0 20px 7px #b84cff;; }
+          .legendary { box-shadow: 0 0 20px 7px  #c2a607; }
+
+
+          .holo {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 5;
+
+            /* capa brillo */
+            background:
+              linear-gradient(
+                115deg,
+                transparent 20%,
+                rgba(255,255,255,0.25) 35%,
+                transparent 50%
+              ),
+
+              linear-gradient(
+                45deg,
+                rgba(255,0,255,0.15),
+                rgba(0,255,255,0.15),
+                rgba(255,255,0,0.15),
+                rgba(255,0,255,0.15)
+              );
+
+            background-size: 200% 200%, 300% 300%;
+
+            mix-blend-mode: screen;
+            opacity: 0.75;
+
+            animation: holoShift 8s linear infinite alternate;
+          }
+
+          /* movimiento foil */
+
+          @keyframes holoShift {
+            0% {
+              background-position: -150% 0%, 0% 50%;
+            }
+
+            100% {
+              background-position: 150% 0%, 100% 50%;
+            }
           }
 
 
@@ -111,10 +162,11 @@ class NBACard extends HTMLElement {
 
           </style>
 
-          <div class="nba-card rare">
+          <div class="nba-card ${rarity}">
 
               <div class="card-frame">
-            
+                <div class="holo"></div>
+
                 <div class="card-number">#${number}</div>
             
                 <img class="team-logo"
