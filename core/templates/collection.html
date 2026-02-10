@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="collection-wrapper">
+
+    <div id="collection-grid"></div>
+
+</div>
+<script id="collection-data" type="application/json">
+    {{ collection }}
+</script>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/collection.js' %}"></script>
+{% endblock %}

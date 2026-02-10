@@ -29,32 +29,51 @@ body.nba-bg {
 }
 
 /* ========================= DASHBOARD ========================= */
-.dashboard {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background: #0b1c2d; 
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border-top: 3px solid #c9082a;
-}
-
-.dashboard a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-
+/* ===== BASE ===== */
 
 body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden; /* ← evita scroll global */
+
   background: radial-gradient(circle at top, #1d428a, #22127e);
   font-family: 'Segoe UI', sans-serif;
   color: white;
 }
+
+/* ===== SCROLL AREA ===== */
+
+.main-scroll {
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+
+  padding: 20px;
+}
+
+/* 👇 clave */
+
+.main-scroll .container {
+  min-height: 100%;
+}
+/* ===== DASHBOARD ===== */
+
+.dashboard {
+  height: 60px;
+
+  background: #0b1c2d;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  border-top: 3px solid #c9082a;
+}
+
+.dashboard a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 
 
 .pack-img {
@@ -65,3 +84,38 @@ body {
 .pack-card {
   cursor: pointer;
 }
+
+
+/* =================================== COLLECTION =================================== */
+
+.collection-wrapper {
+
+  height: calc(100vh - 60px); /* dashboard space */
+  overflow-y: auto;
+  padding: 20px;
+
+}
+
+#collection-grid {
+
+  display: grid;
+  gap: 20px;
+  justify-content: center;
+
+  grid-template-columns: repeat(4, 240px);
+}
+
+/* tablet */
+@media (max-width: 1200px) {
+  #collection-grid {
+    grid-template-columns: repeat(3, 240px);
+  }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  #collection-grid {
+    grid-template-columns: repeat(2, 240px);
+  }
+}
+

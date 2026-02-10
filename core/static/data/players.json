@@ -2,46 +2,62 @@
     {
       "id": 1,
       "name": "LeBron James",
-      "image": "../imgs/players/lebron.jpg",
-      "team": "Lakers",
+      "image": "/static/imgs/players/lebron.jpg",
+      "team": "LosAngelesLakers",
+      "rarity": "legendary",
       "border1": "#22276b",
       "border2": "#cba91b",
-      "rarity": "Legendary"
+      "holo": "true"
     },
     {
       "id": 2,
       "name": "Stephen Curry",
-      "image": "../imgs/players/curry.jpg",
-      "team": "Lakers",
-      "rarity": "Legendary"
+      "image": "/static/imgs/players/curry.jpg",
+      "team": "GoldenStateWarriors",
+      "rarity": "legendary",
+      "border1": "#dbed37",
+      "border2": "#3434d9",
+      "holo": "false"
     },
     {
       "id": 3,
       "name": "Kevin Durant",
-      "image": "../imgs/players/durant.jpeg",
-      "team": "Lakers",
-      "rarity": "Legendary"
+      "image": "/static/imgs/players/durant.jpeg",
+      "team": "PhoenixSuns",
+      "rarity": "legendary",
+      "border1": "#6e34d9",
+      "border2": "#000000",
+      "holo": "false"
     },
     {
       "id": 4,
       "name": "Giannis Antetokounmpo",
-      "image": "../imgs/players/giannis.jpeg",
-      "team": "Lakers",
-      "rarity": "Legendary"
+      "image": "/static/imgs/players/giannis.jpeg",
+      "team": "MilwaukeeBucks",
+      "rarity": "legendary",
+      "border1": "#13520b",
+      "border2": "#ffffff",
+      "holo": "false"
     },
     {
       "id": 5,
       "name": "Kawhi Leonard",
-      "image": "../imgs/players/leonard.jpg",
-      "team": "Lakers",
-      "rarity": "Legendary"
+      "image": "/static/imgs/players/leonard.jpg",
+      "team": "LAClippers",
+      "rarity": "epic",
+      "border1": "#2528b3",
+      "border2": "#b51d27",
+      "holo": "false"
     },
     {
       "id": 6,
       "name": "Luka Dončić",
-      "image": "../imgs/players/doncic.jpg",
-      "team": "Lakers",
-      "rarity": "Legendary"
+      "image": "/static/imgs/players/doncic.jpg",
+      "team": "DallasMavericks",
+      "rarity": "legendary",
+      "border1": "#1521ab",
+      "border2": "#ffffff",
+      "holo": "true"
     },
     {
       "id": 7,

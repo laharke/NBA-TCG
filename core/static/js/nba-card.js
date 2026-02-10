@@ -8,13 +8,12 @@ class NBACard extends HTMLElement {
       const number = this.getAttribute('number') || '0';
       const name = this.getAttribute('name') || 'Unknown';
       const rarity = this.getAttribute('rarity') || 'common';
-      const holo = this.getAttribute('holo') || 'holo';
+      const holo = this.getAttribute('holo') != null ? 'holo' : '';
       const image = this.getAttribute('image');
       const teamLogo = this.getAttribute('team-logo');
 
       const border1 = this.getAttribute('border1');
       const border2 = this.getAttribute('border2');
-  
       this.shadowRoot.innerHTML = `
         <style>
        /* ===== BASE CARD ===== */
@@ -165,7 +164,7 @@ class NBACard extends HTMLElement {
           <div class="nba-card ${rarity}">
 
               <div class="card-frame">
-                <div class="holo"></div>
+                <div class="${holo}"></div>
 
                 <div class="card-number">#${number}</div>
             

@@ -3,6 +3,27 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.http import JsonResponse
+import random
+import json
+from pathlib import Path
+from django.conf import settings
+import os
+from django.utils import timezone
+from .utils.cards import *
+from .models import Card
+from django.forms.models import model_to_dict
+from django.utils.safestring import mark_safe
+from django.core import serializers
+from django.db.models import Exists, OuterRef
+
+
+
+ 
+
+
+
+
 
 def login_view(request):
     if request.user.is_authenticated:
@@ -66,9 +87,48 @@ def register_view(request):
 
     return render(request, "register.html")
 
-def pack_view(request):
 
+
+def open_pack(request):
+
+    # Primero aca tengo que hacer el chequeo leyendo en base de datos si pasaron 24 horas del ultimo pack open.
+
+
+    cards = list(Card.objects.all())
+    cards = random.sample(cards, 5)
+
+    for card in cards:
+        add_card(request.user, card)
+
+    request.user.last_pack_time = timezone.now()
+    request.user.save()
+
+    response_cards = [model_to_dict(card) for card in cards]   
+
+    return JsonResponse({"cards": response_cards})
+
+@login_required
+def pack_view(request):
     return render(request, "packs.html")
 
+
+@login_required
+def collection_view(request):
+
+    user_cards = UserCard.objects.filter(
+        user=request.user,
+        card=OuterRef('pk')
+    )
+
+    collection = list(Card.objects.annotate(
+        own=Exists(user_cards)
+    ).order_by('card_id').values())
+
+    context = {
+        "collection": mark_safe(json.dumps(collection))
+    }
+    return render(request, "collection.html", context)
+
+@login_required
 def duel_view(request):
     return render(request, 'duel.html')
