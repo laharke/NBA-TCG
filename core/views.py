@@ -11,7 +11,7 @@ from django.conf import settings
 import os
 from django.utils import timezone
 from .utils.cards import *
-from .models import Card
+from .models import Card, Trade
 from django.forms.models import model_to_dict
 from django.utils.safestring import mark_safe
 from django.core import serializers
@@ -90,10 +90,7 @@ def register_view(request):
 
 
 def open_pack(request):
-
     # Primero aca tengo que hacer el chequeo leyendo en base de datos si pasaron 24 horas del ultimo pack open.
-
-
     cards = list(Card.objects.all())
     cards = random.sample(cards, 5)
 
@@ -128,6 +125,46 @@ def collection_view(request):
         "collection": mark_safe(json.dumps(collection))
     }
     return render(request, "collection.html", context)
+
+@login_required
+def trade_view(request):
+    trades = Trade.objects.all()
+    trades = Trade.objects.select_related(
+        "creator",
+        "offered_card",
+        "requested_card"
+    )
+    context = {
+        'trades': trades
+    }
+    print(trades)
+    #Obtener todos los TRADES, de los trades necesiot ID, creador, carta queda, carat que pide, y de las cartas que da y pide ncesito id,rareza, team
+    for trade in trades:
+        print(trade.creator.last_pack_time)
+
+    return render(request, 'trade.html', context)
+
+@login_required
+def make_trade(request):
+
+    # EJEMPLO de como tengo qeu gaurdar en user card necesiot un obejto user y un objeto card.
+    # Para esto voy a necesitar los ids 
+    # user = request.user
+    # card = Card.objects.get(card_id=5)
+    # add_card(request.user, card)
+    data = json.loads(request.body)
+    print(data)
+
+    print(data.get("tradeId"))
+    offered_card = data.get("offered_card")
+    requested_card = data.get("requested_card")
+
+
+    return
+
+    # Yo tengo que fijarme si el usuario que intenta tradear TIENE la carta primero, tiene y quanity + 0
+
+
 
 @login_required
 def duel_view(request):

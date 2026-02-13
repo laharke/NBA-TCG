@@ -6,6 +6,7 @@ const collection = JSON.parse(data.textContent);
 console.log(collection)
 
 const grid = document.getElementById("collection-grid");
+
 // Voy a loopear la Collection y agrego cada carta como una cosa msiteriosa uwu , pero me fijo si el usuario OWNS that card
 // Esto con sql seria mas sencillo porque podria ahcerun  join y marcar como OWN true o false pero weno fue
 collection.forEach(card => {
@@ -20,23 +21,10 @@ collection.forEach(card => {
         card['team'] = "questionmark"
         carta = generteCard(card)
     }
-    
-    grid.appendChild(carta);
+    const slot = document.createElement("div");
+    slot.className = "album-slot";
+
+    slot.appendChild(carta);
+    grid.appendChild(slot);
 })
 
-
-
-
-
-
-cards.forEach(card => {
-
-    // La quantity no mei mporta
-
-    /*
-    for (let i = 0; i < card.quantity; i++) {
-
-        inv = generteCard(card)
-        grid.appendChild(inv);
-    }*/
-});

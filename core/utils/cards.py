@@ -31,7 +31,7 @@ def add_card(user, card):
 
     uc, created = UserCard.objects.get_or_create(
         user=user,
-        card_id=card
+        card=card
     )
 
     if not created:

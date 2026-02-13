@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+<h2>Trades</h2>
+
+<table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th hidden scope="col">ID</th>
+        <th scope="col">User</th>
+        <th scope="col">Offer</th>
+        <th scope="col">Wants</th>
+        <th scope="col"> </th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for trade in trades %}
+            <tr>
+                <td hidden data-trade="{{ trade.id }}" data-user="{{ trade.creator.id }}" data-offered="{{ trade.offered_card.id }}" data-wanted="{{ trade.requested_card.id }}"> {{ trade.id }} </td>
+                <td scope="row">{{ trade.creator }}</td>
+                <td>{{ trade.offered_card.name }} ({{ trade.offered_card.team }})</td>
+                <td>{{ trade.requested_card.name }} ({{ trade.requested_card.team }})</td>
+                <td> 
+                  {% if request.user != trade.creator %}
+                  <button type="button" onclick="trade_card(this)" class="btn btn-light">
+                    <i class="fas fa-check">🤝</i> 
+                  </button>
+                  {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+  
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/trade.js' %}"></script>
+{% endblock %}

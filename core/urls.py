@@ -10,5 +10,7 @@ urlpatterns = [
     path('duel/', views.duel_view, name='duel'),
     path('open_pack/', views.open_pack, name='open_pack'),
     path('collection/', views.collection_view, name='collection'),
+    path('trade/', views.trade_view, name='trade'),
+    path('make_trade/', views.make_trade, name='make_trade'),
     
 ]
