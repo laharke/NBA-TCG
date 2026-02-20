@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <title>{% block title %}NBA TCG{% endblock %}</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
   
 
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -18,6 +21,48 @@
     {% block content %}{% endblock %}
   </div>
 </div>
+
+{% if messages %}
+  {% for message in messages %}
+
+    <div class="alert alert-{{ message.tags }}" 
+         role="alert"
+         style="width: fit-content; position: fixed; top: 4%; right: 4%; z-index: 9999;">
+
+        {% if message.tags == "success" %}
+            <i class="bi bi-check-circle-fill" style="margin-right: 8px;"></i>
+        {% elif message.tags == "error" %}
+            <i class="bi bi-exclamation-triangle-fill" style="margin-right: 8px;"></i>
+        {% elif message.tags == "info" %}
+            <i class="bi bi-info-circle-fill" style="margin-right: 8px;"></i>
+        {% endif %}
+
+        <span>{{ message }}</span>
+
+    </div>
+  {% endfor %}
+{% endif %}
+
+
+<div id='dangerAlert' class="alert alert-danger" role="alert" style="width: fit-content; display: none !important; top: 4% !important" >
+  <i class="bi bi-exclamation-triangle-fill" style="margin-right: 8px;">  </i>    
+  <span>An example danger alert with an icon</span>
+</div>
+
+<div id='infoAlert' class="alert alert-primary" role="alert" style="width: fit-content; display: none !important; top: 5% !important;" >
+  <i class="bi bi-info-circle-fill" style="margin-right: 8px;"></i>
+  <span>A simple primary alert—check it out!</span>
+</div>    
+
+
+<div id='successAlert' class="alert alert-success" role="alert" style="width: fit-content; display: none !important;" >
+  <i class="bi bi-check-circle-fill" style="margin-right: 8px;"></i>
+  <span>An example success alert with an icon</span>
+</div>
+
+
+
+
 
 
   <!-- DASHBOARD (only if logged in) -->

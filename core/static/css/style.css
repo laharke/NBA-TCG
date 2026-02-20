@@ -199,3 +199,14 @@ th, td {
 th {
   background-color: #f2f2f2;
 }
+
+.alert {
+  width: fit-content !important;
+  text-align: center !important;
+  position: fixed !important;
+  top: 10% !important;
+  left: 50% !important;
+  transform: translateX(-40%) !important;
+  padding: 10px 20px !important;
+  z-index: 10000 !important; 
+}

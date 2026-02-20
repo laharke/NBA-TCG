@@ -6,27 +6,40 @@
 
 <h2>Trades</h2>
 
+<div style="display: flex; justify-content: center;">
+  <button type="button" onclick="openTradeModal()" class="btn btn-dark"> Create New Trade </button>
+</div>
+
+<div style="display: flex; justify-content: center; margin: 4px">
+  <button type="button"  class="btn btn-dark">  <a href="{% url 'trade' %}?own=1" style="  color: white;  text-decoration: none;">Filter My Trades</a> </button>
+  <button type="button" style="margin-left: 5px;" class="btn btn-dark"> <a href="{% url 'trade' %}" style="  color: white;  text-decoration: none;">Get All Trades</a> </button>
+</div>
+
 <table class="table table-dark table-striped">
     <thead>
       <tr>
         <th hidden scope="col">ID</th>
         <th scope="col">User</th>
-        <th scope="col">Offer</th>
+        <th scope="col">Offers</th>
         <th scope="col">Wants</th>
-        <th scope="col"> </th>
+        <th scope="col"> Action</th>
       </tr>
     </thead>
     <tbody>
-        {% for trade in trades %}
+        {% for trade in page_obj %}
             <tr>
                 <td hidden data-trade="{{ trade.id }}" data-user="{{ trade.creator.id }}" data-offered="{{ trade.offered_card.id }}" data-wanted="{{ trade.requested_card.id }}"> {{ trade.id }} </td>
                 <td scope="row">{{ trade.creator }}</td>
                 <td>{{ trade.offered_card.name }} ({{ trade.offered_card.team }})</td>
                 <td>{{ trade.requested_card.name }} ({{ trade.requested_card.team }})</td>
-                <td> 
+                <td style="display: flex; justify-content: center"> 
                   {% if request.user != trade.creator %}
-                  <button type="button" onclick="trade_card(this)" class="btn btn-light">
-                    <i class="fas fa-check">🤝</i> 
+                  <button type="button" onclick="trade_card(this)" class="btn">
+                    🤝 
+                  </button>
+                  {% else %}
+                  <button type="button" onclick="delete_trade(this)" class="btn">
+                    🗑️ 
                   </button>
                   {% endif %}
                 </td>
@@ -34,7 +47,64 @@
         {% endfor %}
     </tbody>
   </table>
-  
+
+
+<!-- TESTAR BIEN PAGINATION -->
+<nav style="display: flex; justify-content:center">
+  <ul class="pagination">
+    {% if page_obj.has_previous %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.previous_page_number }}{% if filter_my %}&own=1{% endif %}">Previous</a>
+      </li>
+    {% endif %}
+
+    <li class="page-item disabled">
+      <span class="page-link">
+        {{ page_obj.number }} / {{ page_obj.paginator.num_pages }}
+      </span>
+    </li>
+
+    {% if page_obj.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.next_page_number }}{% if filter_my %}&own=1{% endif %}">Next</a>
+      </li>
+    {% endif %}
+  </ul>
+</nav>
+
+
+<div class="modal fade " id="tradeModal" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered" style="max-width: 400px;">
+    <div class="modal-content bg-dark text-light">
+
+      <div class="modal-header border-secondary">
+        <h5 class="modal-title">Crear trade </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+       
+    
+          <label for="offeredCard">Example select</label>
+          <select name="offeredCard" id="offeredCardSelect" class="form-control mb-3" placeholder="">
+            <option value=""></option>
+          </select>
+
+          <label for="wantedCard">Example select</label>
+          <select name="wantedCard" id="wantedCardSelect" class="form-control mb-3" placeholder=""></select>
+            <option value=""></option>
+          </select>
+          
+      </div>
+
+      <div class="modal-footer border-secondary">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" onclick="add_trade()" class="btn btn-outline-light">Publish trade</button>
+      </div>
+
+    </div>
+  </div>
+</div>
 {% endblock %}
 
 {% block extra_js %}

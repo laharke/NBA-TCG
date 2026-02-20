@@ -12,5 +12,10 @@ urlpatterns = [
     path('collection/', views.collection_view, name='collection'),
     path('trade/', views.trade_view, name='trade'),
     path('make_trade/', views.make_trade, name='make_trade'),
+    path('add_trade/', views.add_trade, name='add_trade'),
+    path('delete_trade/', views.delete_trade, name='delete_trade'),
+
+
+    
     
 ]

@@ -34,3 +34,27 @@ function generteCard(cardData){
   }
   return card;
 }
+
+//Mostrar una alerta - Va a recibir un argumento si queres mostrar error, success o info y un mensaje text para mostrar en pantalla.
+function showAlert(tipo, mensaje){
+  if (tipo == 'info'){
+    tipo = '#infoAlert'
+  } else if( tipo == 'success'){
+    tipo = '#successAlert'
+  } else if( tipo == 'error'){
+    tipo = '#dangerAlert'
+  }
+
+  //Muestro el div
+  $(tipo).show().delay(4500).fadeOut()
+  //Cambio el text
+  $(tipo).find('span').text(mensaje)
+}
+
+// BORRAR ALERTAS DE DJANO SINO QUEDNA FIJA
+setTimeout(() => {
+    document.querySelectorAll('.alert').forEach(el => {
+        el.style.opacity = "0";
+        setTimeout(() => el.remove(), 500);
+    });
+}, 3000);
