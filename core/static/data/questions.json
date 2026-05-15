@@ -1,0 +1,470 @@
+{
+    "questions": [
+      {
+        "question": "Which player scored 81 points in a single NBA game?",
+        "options": ["Kobe Bryant", "Michael Jordan", "LeBron James", "Kevin Durant"],
+        "answer": "Kobe Bryant"
+      },
+      {
+        "question": "Which team won the 2023 NBA Championship?",
+        "options": ["Denver Nuggets", "Miami Heat", "Boston Celtics", "Golden State Warriors"],
+        "answer": "Denver Nuggets"
+      },
+      {
+        "question": "Which player is known as 'The Greek Freak'?",
+        "options": ["Giannis Antetokounmpo", "Nikola Jokic", "Luka Doncic", "Joel Embiid"],
+        "answer": "Giannis Antetokounmpo"
+      },
+      {
+        "question": "Which player has the most NBA MVP awards?",
+        "options": ["Kareem Abdul-Jabbar", "Michael Jordan", "LeBron James", "Magic Johnson"],
+        "answer": "Kareem Abdul-Jabbar"
+      },
+      {
+        "question": "Who is the all-time leading scorer in NBA history?",
+        "options": ["LeBron James", "Kareem Abdul-Jabbar", "Karl Malone", "Michael Jordan"],
+        "answer": "LeBron James"
+      },
+      {
+        "question": "Which team did Shaquille O'Neal win three championships with from 2000-2002?",
+        "options": ["Los Angeles Lakers", "Miami Heat", "Orlando Magic", "Phoenix Suns"],
+        "answer": "Los Angeles Lakers"
+      },
+      {
+        "question": "Which team does Kevin Durant play for (2024)?",
+        "options": ["Phoenix Suns", "Brooklyn Nets", "Golden State Warriors", "Miami Heat"],
+        "answer": "Phoenix Suns"
+      },
+      {
+        "question": "Which player is known for the 'Skyhook' shot?",
+        "options": ["Kareem Abdul-Jabbar", "Hakeem Olajuwon", "Shaquille O'Neal", "Tim Duncan"],
+        "answer": "Kareem Abdul-Jabbar"
+      },
+      {
+        "question": "Which team won the 2016 NBA Championship?",
+        "options": ["Cleveland Cavaliers", "Golden State Warriors", "Toronto Raptors", "San Antonio Spurs"],
+        "answer": "Cleveland Cavaliers"
+      },
+      {
+        "question": "Which team drafted Kobe Bryant?",
+        "options": ["Charlotte Hornets", "Los Angeles Lakers", "Philadelphia 76ers", "Boston Celtics"],
+        "answer": "Charlotte Hornets"
+      },
+      {
+        "question": "Which team won the 2019 NBA Championship?",
+        "options": ["Toronto Raptors", "Golden State Warriors", "Milwaukee Bucks", "Los Angeles Lakers"],
+        "answer": "Toronto Raptors"
+      },
+      {
+        "question": "Which player is famous for the 'Fadeaway' shot?",
+        "options": ["Michael Jordan", "Shaquille O'Neal", "Allen Iverson", "Chris Paul"],
+        "answer": "Michael Jordan"
+      },
+      {
+        "question": "Which team won the 2021 NBA Championship?",
+        "options": ["Milwaukee Bucks", "Phoenix Suns", "Miami Heat", "Boston Celtics"],
+        "answer": "Milwaukee Bucks"
+      },
+      {
+        "question": "Which player is known as 'The Beard'?",
+        "options": ["James Harden", "Anthony Davis", "Damian Lillard", "Russell Westbrook"],
+        "answer": "James Harden"
+      },
+      {
+        "question": "Which team does Ja Morant play for (2024)?",
+        "options": ["Memphis Grizzlies", "Atlanta Hawks", "Detroit Pistons", "Indiana Pacers"],
+        "answer": "Memphis Grizzlies"
+      },
+      {
+        "question": "Which player is known as 'The Joker'?",
+        "options": ["Nikola Jokic", "Luka Doncic", "Domantas Sabonis", "Kristaps Porzingis"],
+        "answer": "Nikola Jokic"
+      },
+      {
+        "question": "Which team did Kevin Garnett win his championship with?",
+        "options": ["Boston Celtics", "Minnesota Timberwolves", "Brooklyn Nets", "Chicago Bulls"],
+        "answer": "Boston Celtics"
+      },
+      {
+        "question": "Which team does Trae Young play for (2022)?",
+        "options": ["Atlanta Hawks", "Orlando Magic", "Charlotte Hornets", "Washington Wizards"],
+        "answer": "Atlanta Hawks"
+      },
+      {
+        "question": "Which player was known as 'The Answer'?",
+        "options": ["Allen Iverson", "Steve Nash", "Gary Payton", "Ray Allen"],
+        "answer": "Allen Iverson"
+      },
+      {
+        "question": "Which team did Michael Jordan return to in 2001?",
+        "options": ["Washington Wizards", "Chicago Bulls", "Charlotte Hornets", "New York Knicks"],
+        "answer": "Washington Wizards"
+      },
+      {
+        "question": "Which team does Damian Lillard play for (2024)?",
+        "options": ["Milwaukee Bucks", "Portland Trail Blazers", "Miami Heat", "Utah Jazz"],
+        "answer": "Milwaukee Bucks"
+      },
+      {
+        "question": "Which player is known as 'The Mailman'?",
+        "options": ["Karl Malone", "Charles Barkley", "Scottie Pippen", "Patrick Ewing"],
+        "answer": "Karl Malone"
+      },
+      {
+        "question": "Which team did Hakeem Olajuwon win championships with?",
+        "options": ["Houston Rockets", "San Antonio Spurs", "Los Angeles Lakers", "Dallas Mavericks"],
+        "answer": "Houston Rockets"
+      },
+      {
+        "question": "Which player is known for the 'Dream Shake'?",
+        "options": ["Hakeem Olajuwon", "Shaquille O'Neal", "David Robinson", "Patrick Ewing"],
+        "answer": "Hakeem Olajuwon"
+      },
+      {
+        "question": "Which player is famous for the 'Finger Roll'?",
+        "options": ["George Gervin", "Magic Johnson", "Larry Bird", "Julius Erving"],
+        "answer": "George Gervin"
+      },
+      {
+        "question": "Which player was known as 'Dr. J'?",
+        "options": ["Julius Erving", "Larry Bird", "Moses Malone", "Isiah Thomas"],
+        "answer": "Julius Erving"
+      },
+      {
+        "question": "Which team does De'Aaron Fox play for?",
+        "options": ["Sacramento Kings", "Phoenix Suns", "Los Angeles Clippers", "Utah Jazz"],
+        "answer": "Sacramento Kings"
+      },
+      {
+        "question": "Which team won the 2020 NBA Championship?",
+        "options": ["Los Angeles Lakers", "Miami Heat", "Denver Nuggets", "Boston Celtics"],
+        "answer": "Los Angeles Lakers"
+      },
+      {
+        "question": "Which player was known as 'The Big Fundamental'?",
+        "options": ["Tim Duncan", "Kevin Garnett", "Dirk Nowitzki", "Chris Webber"],
+        "answer": "Tim Duncan"
+      },
+      {
+        "question": "Which player was known as 'The Truth'?",
+        "options": ["Paul Pierce", "Ray Allen", "Kevin Garnett", "Reggie Miller"],
+        "answer": "Paul Pierce"
+      },
+      {
+        "question": "Which team does Anthony Davis play for?",
+        "options": ["Los Angeles Lakers", "New Orleans Pelicans", "Dallas Mavericks", "Washington Wizards"],
+        "answer": "Washington Wizards"
+      },
+      {
+        "question": "Which team did Larry Bird play for his entire career?",
+        "options": ["Boston Celtics", "Detroit Pistons", "Chicago Bulls", "Milwaukee Bucks"],
+        "answer": "Boston Celtics"
+      },
+      {
+        "question": "Who owns the free throw percentage record in a season?",
+        "options": [
+          "Jose Calderon", "Steve Nash", "Stephen Curry", "Peja Stojaković"],
+        "answer": "Jose Calderon"
+      },
+      {
+        "question": "Who holds the record for most points in a single NBA game?",
+        "options": [
+          "Wilt Chamberlain",
+          "Kobe Bryant",
+          "Michael Jordan",
+          "Elgin Baylor"
+        ],
+        "answer": "Wilt Chamberlain"
+      },
+      {
+        "question": "Which player has the most career assists in NBA history?",
+        "options": [
+          "John Stockton",
+          "Jason Kidd",
+          "Magic Johnson",
+          "Chris Paul"
+        ],
+        "answer": "John Stockton"
+      },
+      {
+        "question": "Which player has the most career rebounds in NBA history?",
+        "options": [
+          "Wilt Chamberlain",
+          "Bill Russell",
+          "Kareem Abdul-Jabbar",
+          "Moses Malone"
+        ],
+        "answer": "Wilt Chamberlain"
+      },
+      {
+        "question": "Who was the youngest MVP in NBA history?",
+        "options": [
+          "Derrick Rose",
+          "LeBron James",
+          "Magic Johnson",
+          "Kobe Bryant"
+        ],
+        "answer": "Derrick Rose"
+      },
+      {
+        "question": "Which team drafted Dirk Nowitzki in the 1998 NBA Draft?",
+        "options": [
+          "Milwaukee Bucks",
+          "Dallas Mavericks",
+          "Boston Celtics",
+          "Phoenix Suns"
+        ],
+        "answer": "Milwaukee Bucks"
+      },
+      {
+        "question": "Which player has the most career triple-doubles in NBA history?",
+        "options": [
+          "Russell Westbrook",
+          "Oscar Robertson",
+          "Magic Johnson",
+          "Nikola Jokic"
+        ],
+        "answer": "Russell Westbrook"
+      },
+      {
+        "question": "Who was the Finals MVP in the 2014 NBA Finals?",
+        "options": [
+          "Kawhi Leonard",
+          "Tim Duncan",
+          "Tony Parker",
+          "Manu Ginobili"
+        ],
+        "answer": "Kawhi Leonard"
+      },
+      {
+        "question": "Which player scored 70 points in a game for the Phoenix Suns in 2017?",
+        "options": [
+          "Devin Booker",
+          "Kevin Durant",
+          "Steve Nash",
+          "Amar'e Stoudemire"
+        ],
+        "answer": "Devin Booker"
+      },
+      {
+        "question": "Which player has the most 3-pointers made in NBA history?",
+        "options": [
+          "Stephen Curry",
+          "Ray Allen",
+          "James Harden",
+          "Reggie Miller"
+        ],
+        "answer": "Stephen Curry"
+      },
+      {
+        "question": "Which player won MVP in the 2007 NBA season?",
+        "options": [
+          "Dirk Nowitzki",
+          "Steve Nash",
+          "Kobe Bryant",
+          "Tim Duncan"
+        ],
+        "answer": "Dirk Nowitzki"
+      },
+      {
+        "question": "Which player was nicknamed 'The Answer'?",
+        "options": [
+          "Allen Iverson",
+          "Tracy McGrady",
+          "Gary Payton",
+          "Jason Kidd"
+        ],
+        "answer": "Allen Iverson"
+      },
+      {
+        "question": "Who was the first unanimous MVP in NBA history?",
+        "options": [
+          "Stephen Curry",
+          "LeBron James",
+          "Shaquille O'Neal",
+          "Michael Jordan"
+        ],
+        "answer": "Stephen Curry"
+      },
+      {
+        "question": "Which player has the most career blocks in NBA history?",
+        "options": [
+          "Hakeem Olajuwon",
+          "Dikembe Mutombo",
+          "Kareem Abdul-Jabbar",
+          "Mark Eaton"
+        ],
+        "answer": "Hakeem Olajuwon"
+      },
+      {
+        "question": "Which team ended the Chicago Bulls 72–10 season in the 1996 playoffs?",
+        "options": [
+          "Seattle SuperSonics",
+          "Orlando Magic",
+          "New York Knicks",
+          "Indiana Pacers"
+        ],
+        "answer": "Seattle SuperSonics"
+      },
+      {
+        "question": "Which player has the most steals in NBA history?",
+        "options": [
+          "John Stockton",
+          "Michael Jordan",
+          "Gary Payton",
+          "Jason Kidd"
+        ],
+        "answer": "John Stockton"
+      },
+      {
+        "question": "Who was the Finals MVP in the 2011 NBA Finals?",
+        "options": [
+          "Dirk Nowitzki",
+          "Jason Kidd",
+          "Dwyane Wade",
+          "LeBron James"
+        ],
+        "answer": "Dirk Nowitzki"
+      },
+      {
+        "question": "Which player recorded the first quadruple-double in the modern NBA era?",
+        "options": [
+          "Nate Thurmond",
+          "Hakeem Olajuwon",
+          "David Robinson",
+          "Alvin Robertson"
+        ],
+        "answer": "Nate Thurmond"
+      },
+      {
+        "question": "Which team drafted Kobe Bryant in 1996?",
+        "options": [
+          "Charlotte Hornets",
+          "Los Angeles Lakers",
+          "Philadelphia 76ers",
+          "Boston Celtics"
+        ],
+        "answer": "Charlotte Hornets"
+      },
+      {
+        "question": "Which player won Defensive Player of the Year 4 times with the Detroit Pistons in the 2000s?",
+        "options": [
+          "Ben Wallace",
+          "Chauncey Billups",
+          "Rasheed Wallace",
+          "Tayshaun Prince"
+        ],
+        "answer": "Ben Wallace"
+      },
+      {
+        "question": "Which player scored the most points in a rookie season in NBA history?",
+        "options": [
+          "Wilt Chamberlain",
+          "Michael Jordan",
+          "Kareem Abdul-Jabbar",
+          "Elvin Hayes"
+        ],
+        "answer": "Wilt Chamberlain"
+      },
+      {
+        "question": "Which player won MVP and Defensive Player of the Year in the same season in 1988?",
+        "options": [
+          "Michael Jordan",
+          "Hakeem Olajuwon",
+          "Larry Bird",
+          "Magic Johnson"
+        ],
+        "answer": "Michael Jordan"
+      },
+      {
+        "question": "Which player had a 30 assist game in 1990?",
+        "options": [
+          "Scott Skiles",
+          "John Stockton",
+          "Magic Johnson",
+          "Isiah Thomas"
+        ],
+        "answer": "Scott Skiles"
+      },
+      {
+        "question": "Which player is the youngest player to score 10,000 career points?",
+        "options": [
+          "LeBron James",
+          "Kevin Durant",
+          "Kobe Bryant",
+          "Carmelo Anthony"
+        ],
+        "answer": "LeBron James"
+      },
+      {
+        "question": "Which player won the 2008 NBA MVP?",
+        "options": [
+          "Kobe Bryant",
+          "LeBron James",
+          "Chris Paul",
+          "Kevin Garnett"
+        ],
+        "answer": "Kobe Bryant"
+      },
+      {
+        "question": "Which team did Kevin Garnett win his only NBA championship with?",
+        "options": [
+          "Boston Celtics",
+          "Minnesota Timberwolves",
+          "Brooklyn Nets",
+          "Chicago Bulls"
+        ],
+        "answer": "Boston Celtics"
+      },
+      {
+        "question": "Which player was known as 'The Glove'?",
+        "options": [
+          "Gary Payton",
+          "Dennis Rodman",
+          "Shawn Kemp",
+          "Jason Kidd"
+        ],
+        "answer": "Gary Payton"
+      },
+      {
+        "question": "Which player has the most career points for the Dallas Mavericks?",
+        "options": [
+          "Dirk Nowitzki",
+          "Luka Doncic",
+          "Rolando Blackman",
+          "Mark Aguirre"
+        ],
+        "answer": "Dirk Nowitzki"
+      },
+      {
+        "question": "Who was the MVP of the 2016 NBA Finals?",
+        "options": [
+          "LeBron James",
+          "Kyrie Irving",
+          "Stephen Curry",
+          "Kevin Love"
+        ],
+        "answer": "LeBron James"
+      },
+      {
+        "question": "Which player has the most career games played in NBA history?",
+        "options": [
+          "Robert Parish",
+          "Kareem Abdul-Jabbar",
+          "Vince Carter",
+          "Dirk Nowitzki"
+        ],
+        "answer": "Robert Parish"
+      },
+      {
+        "question": "Which player won MVP in both the NBA and EuroLeague during his career?",
+        "options": [
+          "Dirk Nowitzki",
+          "Arvydas Sabonis",
+          "Nikola Jokic",
+          "Peja Stojakovic"
+        ],
+        "answer": "Dirk Nowitzki"
+      }
+    ]
+  }

@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+Es hora... del duee eu dudu dudu duuelo
+
+<br>
+<button onclick="api()"> TEST API</button>
+
+
+<div id="screen-select-card">
+    <h2>Select a card to bet</h2>
+  
+
+    <div style="width: 50%;">
+        <label for="offeredCard">Card to bet:</label>
+        <select style="margin-bottom: 0 !important" name="cardToBetOffline" id="cardToBetOffline" class="form-control mb-3" placeholder="">
+            {% for card in owned %}
+                <option value="{{ card.card_id }}"> {{ card.name }} ({{ card.team }}) </option>
+            {% endfor %}
+        </select>
+        <small> (Can only bet cards you're not trading !) (If you lose you lose the card)</small>
+    
+        <div>
+            <!-- Tengo que elegr n boton solo  y on lickc START GAME-->
+            <button class="btn btn-secondary" onclick="startGame()"> Start Game ! </button>
+            <button type="button" onclick="" class="btn btn-outline-light"> Start Game ! </button>
+        </div>
+    </div>
+    
+</div>
+
+
+
+
+<div id="screen-game" style="display:none;">
+    <div id="question"></div>
+    <div id="options"></div>
+    <div id="timer"></div>
+</div>
+
+<div id="screen-result" style="display:none;">
+    <h2 id="result-text"></h2>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/duel_offline.js' %}"></script>
+{% endblock %}

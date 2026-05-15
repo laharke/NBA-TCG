@@ -1,5 +1,3 @@
-console.log("trade")
-
 function trade_card(element){
     alert("you gonna trade card are u sure")
     let td = $(element).parent().parent().find("td")
@@ -33,9 +31,7 @@ function trade_card(element){
             showAlert('error', data.error);
         }
 
-        console.log(data);
-
-        console.log(data.result);
+  
         // IF data.result == success muestrou n mesnaej que todo salio bien y refresheo la pagina o borro esa rOW creo que prefeiro refreshar la pagina whatver.
         // else muestro un mensaje de > nope salio tod mal uwu y que error es 
 
@@ -56,24 +52,61 @@ function openTradeModal(){
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data)
-        $("#offeredCardSelect")
-        $("#wantedCardSelect")
+        //console.log(data)
+        data.cards
+        //data.cards.id data.cards.card_id data.cards.id.name data.cards.id data.cards.id.team
+        data.cards.forEach(card => {
+            let option = document.createElement('option');
+            option.value = card.card_id
+            option.textContent = card.name + " (" + card.team.split(/(?=[A-Z])/).join(" ") + ")";
+            $("#wantedCardSelect").append(option)
+        });
 
-        if(data.result == 'success'){
-            window.location.reload();
-        }else{
-            showAlert('error', data.error);
-        }
+
+        data.owned.forEach(card => {
+            let option = document.createElement('option');
+            console.log(card)
+            option.value = card.card_id
+            option.textContent = card.name + " (" + card.team.split(/(?=[A-Z])/).join(" ") + ") (Owned: " + card.quantity +")";
+            $("#offeredCardSelect").append(option)
+        });
+        
+
+
+
+
+   
 
     })
     .catch(err => console.error(err));
 }
 
 function add_trade(){
-    console.log('trade added')
-  
+    
+    // Hay que agarrar los dos id de cartas
+    wantedCardId = $("#wantedCardSelect").val();
+    offeredCardId = $("#offeredCardSelect").val();
 
+    fetch('/add_trade/', {
+        method: 'POST',
+        headers: {
+          'X-CSRFToken': getCookie('csrftoken'),
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            'wantedCardId': wantedCardId,
+            'offeredCardId': offeredCardId,
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if(data.result == 'success'){
+            window.location.reload();
+        }else{
+            showAlert('error', data.error);
+        }   
+    })
+    .catch(err => console.error(err));
 }
 
 

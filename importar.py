@@ -1,3 +1,5 @@
+#Esto tiene que setar en el root para andar, no estoy seguro si el django.setup() 
+
 import os
 import django
 import json

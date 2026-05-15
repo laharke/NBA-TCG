@@ -17,7 +17,13 @@ from django.utils.safestring import mark_safe
 from django.core import serializers
 from django.db.models import Exists, OuterRef, F
 from django.core.paginator import Paginator
+from django.db.models import OuterRef, Subquery, IntegerField
+import re
 
+import base64
+
+def encode_answer(answer):
+    return base64.b64encode(answer.encode()).decode()
 
 #Get custom user model
 User = get_user_model()
@@ -120,10 +126,21 @@ def collection_view(request):
         quantity__gt=0
     )
 
-    collection = list(Card.objects.annotate(
-        own=Exists(user_cards)
-    ).order_by('card_id').values())
+    user_card_quantity = UserCard.objects.filter(
+        user=request.user,
+        card=OuterRef('pk')
+    ).values('quantity')[:1]
 
+    collection = list(
+        Card.objects.annotate(
+            own=Exists(user_cards),
+            quantity=Subquery(user_card_quantity, output_field=IntegerField())
+        )
+        .order_by('card_id')
+        .values()
+    )
+    print (collection)
+    #Quantity puede ser None o Cero
     context = {
         "collection": mark_safe(json.dumps(collection))
     }
@@ -136,7 +153,11 @@ def trade_view(request):
         "creator",
         "offered_card",
         "requested_card"
-    ).order_by("-created_at") 
+    ).order_by("-created_at")
+
+    for trade in trades:
+        trade.offered_card.team = " ".join(re.findall('[A-Z][^A-Z]*', trade.offered_card.team))
+        trade.requested_card.team = " ".join(re.findall('[A-Z][^A-Z]*', trade.requested_card.team))
 
     #TESTEO DE OBTENER MY OWN TRADES
     if request.GET.get("own") == "1":
@@ -232,16 +253,25 @@ def add_trade(request):
             usercard__quantity__gt=0
         )
         .annotate(
+            quantity=F('usercard__quantity'),
             already_in_trade=Exists(active_trades)
         )
         .filter(already_in_trade=False) 
         .distinct()
+        .order_by('card_id')
         .values()
         )
 
-
         return JsonResponse({"cards": cards, "owned": owned}, status=200)
     else:
+        # Aca tengo que agregar el trade.
+        data = json.loads(request.body)
+        wantedCardId = data.get("wantedCardId")
+        offeredCardId = data.get("offeredCardId")
+        wantedCard = Card.objects.get(id=wantedCardId)
+        offeredCard = Card.objects.get(id=offeredCardId)
+        
+        Trade.objects.create(creator = request.user, offered_card = offeredCard, requested_card = wantedCard)
         messages.success(request, "Trade created !")
         return JsonResponse({"result": "success"}, status=200)
  
@@ -259,4 +289,66 @@ def delete_trade(request):
 
 @login_required
 def duel_view(request):
+
     return render(request, 'duel.html')
+
+
+
+@login_required
+def duel_offline_view(request):
+
+    active_trades = Trade.objects.filter(
+        creator=request.user,
+        offered_card=OuterRef('pk')
+    )
+
+    owned = list(
+    Card.objects.filter(
+        usercard__user=request.user,
+        usercard__quantity__gt=0
+    )
+    .annotate(
+        quantity=F('usercard__quantity'),
+        already_in_trade=Exists(active_trades)
+    )
+    .filter(already_in_trade=False) 
+    .distinct()
+    .order_by('card_id')
+    .values()
+    )
+
+    # Parse los TEAMS separados
+    for card in owned:
+        card['team'] = " ".join(re.findall('[A-Z][^A-Z]*', card['team']))
+
+    context = {
+        "owned": (owned)
+    }
+    return render(request, 'duel_offline.html', context)
+
+
+# Una api que le pidas cualquier cantidad de preguntas que se te cante y te las devuelva pueden ser 10 o 5 
+@login_required
+def get_questions_api(request, total):
+
+    with open("core/static/data/questions.json") as f:
+        questions = json.load(f)
+
+    questions = questions['questions']
+    random.shuffle(questions)
+    questions = questions[:total]
+
+    #print(questions)
+
+    data = []
+
+    #TENGO QUE ENCRIPTAR LA ANSWER, Y DESENCRIPTARLA EN JS? SE PEUDE ESTO ?
+    for q in questions:
+
+        data.append({
+            "question": q['question'],
+            "options": q['options'],
+            "answer": encode_answer(q['answer'])
+        })
+
+    return JsonResponse(data, safe=False)
