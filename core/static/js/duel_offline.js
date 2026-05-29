@@ -14,7 +14,6 @@ let game = {
 function api(){
     loadQuestions().then(() => {
 
-        console.log(game.questions)
 
         game.questions.forEach(element => {
             console.log(element)
@@ -163,7 +162,6 @@ function finishGame(){
     .then(response => response.json())
     .then(data => {
 
-        console.log(data)
         if(data.result == 'success'){
             // Aca muestro la carta que ganaste o la que perdiste.
             // Tengo que usar el HTML element de la card para mostrarla

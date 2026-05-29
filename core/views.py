@@ -103,6 +103,9 @@ def open_pack(request):
     # Creo quet nidra uqe que considerar el edge case de que este vacio last_pack_time para nuevos usaurios
 
 
+    if request.user.last_pack_time == None:
+        request.user.last_pack_time = timezone.now() - timedelta(days=1)
+
     result = timezone.now() - request.user.last_pack_time 
     if result < timedelta(hours=24):
         remaining = timedelta(hours=24) - result
@@ -156,7 +159,6 @@ def collection_view(request):
         .order_by('card_id')
         .values()
     )
-    print (collection)
     #Quantity puede ser None o Cero
     context = {
         "collection": mark_safe(json.dumps(collection))
@@ -367,7 +369,7 @@ def compute_game_results_offline(request):
         #Le resto uno al wants - requested card
         
         #user, card
-        print(wonCard)
+        #print(wonCard)
         return JsonResponse({"result": "success", "cardData": wonCard}, status=200)
 
         
@@ -408,3 +410,9 @@ def get_questions_api(request, total):
         })
 
     return JsonResponse(data, safe=False)
+
+@login_required
+def duel_online_view(request):
+
+    
+    return render(request, 'duel_online.html')

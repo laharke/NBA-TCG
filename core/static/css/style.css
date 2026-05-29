@@ -27,6 +27,11 @@ body.nba-bg {
   border-color: #c8102e;
   box-shadow: none;
 }
+.form-control::placeholder {
+  color: #999;
+  opacity: 1; /* importante en algunos navegadores */
+}
+
 
 /* ========================= DASHBOARD ========================= */
 /* ===== BASE ===== */
