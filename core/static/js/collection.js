@@ -17,7 +17,7 @@ collection.forEach(card => {
         // Creo la mystery card
         card['name'] = "";
         card['holo'] = false;
-        card['image'] = "/static/imgs/players/questionmark.avif"
+        card['image'] = "/static/imgs/players/questionmark.png"
         card['team'] = "questionmark"
         carta = generteCard(card)
     }
