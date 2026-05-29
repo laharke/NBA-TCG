@@ -28,22 +28,28 @@ openBtn.addEventListener('click', () => {
     })
     .then(response => response.json())
     .then(data => {
-    // Loopeo y apendo cada CARTA.
-    data['cards'].forEach(card => {
-        card = generteCard(card)
-        document.querySelector('#pack-cards').appendChild(card);    
-    });
+
+        // data va a dodlver data.result y peude ser succes o fail 
+        if (data.result == 'success'){
+            // Loopeo y apendo cada CARTA.
+            data['cards'].forEach(card => {
+                card = generteCard(card)
+                document.querySelector('#pack-cards').appendChild(card);    
+            });
+            const modal = new bootstrap.Modal(
+                document.getElementById('packModal')
+            );
+            
+            modal.show();
+            openBtn.disabled = true;        
+        }else{
+            alert("You alredy claimed a pack today! You can claim another pack in " + data.remainingHours)
+        }
+
+        
 
     })
     .catch(err => console.error(err));
-      
-    const modal = new bootstrap.Modal(
-        document.getElementById('packModal')
-    );
-    
-    modal.show();
-    openBtn.disabled = true;
-    
 });
 
 

@@ -18,6 +18,10 @@ urlpatterns = [
     path("duel/offline/", views.duel_offline_view, name="duel_offline"),
     #path("duel/online/", views.duel_online, name="duel_online"),
 
-    path('get_questions_api/<int:total>/', views.get_questions_api, name='get_questions_api')    
+    path('get_questions_api/<int:total>/', views.get_questions_api, name='get_questions_api'),
+
+    path("duel/offline/compute_game_results/", views.compute_game_results_offline, name="compute_game_results_offline"),
+
+    
     
 ]

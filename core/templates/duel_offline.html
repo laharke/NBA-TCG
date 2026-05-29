@@ -3,10 +3,6 @@
 
 
 {% block content %}
-Es hora... del duee eu dudu dudu duuelo
-
-<br>
-<button onclick="api()"> TEST API</button>
 
 
 <div id="screen-select-card">
@@ -35,13 +31,15 @@ Es hora... del duee eu dudu dudu duuelo
 
 
 <div id="screen-game" style="display:none;">
+    <div id="timer"></div>
     <div id="question"></div>
     <div id="options"></div>
-    <div id="timer"></div>
 </div>
+
 
 <div id="screen-result" style="display:none;">
     <h2 id="result-text"></h2>
+    <div id="result-card"></div>
 </div>
 {% endblock %}
 

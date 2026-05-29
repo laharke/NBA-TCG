@@ -35,6 +35,7 @@ function generteCard(cardData){
   return card;
 }
 
+
 //Mostrar una alerta - Va a recibir un argumento si queres mostrar error, success o info y un mensaje text para mostrar en pantalla.
 function showAlert(tipo, mensaje){
   if (tipo == 'info'){

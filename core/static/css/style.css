@@ -210,3 +210,112 @@ th {
   padding: 10px 20px !important;
   z-index: 10000 !important; 
 }
+
+
+/* =================================== DUEL =================================== */
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(135deg, #ad3535, #7e1ca5);
+  padding: 14px 32px;
+  border-radius: 14px;
+  font-size: 20px;
+  font-weight: bold;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+.menu a:hover {
+  transform: translateY(-4px) scale(1.05);
+  background: linear-gradient(135deg, #ce3e3e, #bd25eb);
+  box-shadow: 0 10px 20px rgba(195, 37, 235, 0.5);
+}
+
+/* =================================== DUEL OFFLINE  =================================== */
+
+#screen-game{
+  
+}
+#question{
+  display: flex !important;
+  justify-content: center;
+  font-size: x-large;
+  font-family: 'Courier New', Courier, monospace;
+}
+#timer{
+  display: flex !important;
+  justify-content: center;
+  font-size: xxx-large;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#options {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centra horizontalmente */
+  gap: 15px; /* separación entre opciones */
+  width: 100%;
+  margin-top: 25px;
+}
+
+
+/* =========================
+   ANSWER OPTION
+========================= */
+
+.answerOption {
+
+  width: 60%;
+  max-width: 700px;
+  padding: 14px 20px;
+  border-radius: 14px;
+  background-color: #3b546e;
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  user-select: none;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    transform 0.15s,
+    box-shadow 0.2s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+.answerOption:hover {
+  background-color: #0056b3;
+  transform: scale(1.02);
+}
+.answerOption:active {
+  background-color: #004085;
+  transform: scale(0.98);
+}
+.answerOption:focus {
+  outline: 2px solid #80bdff;
+  outline-offset: 3px;
+}
+
+/* =========================
+   RESULT OFFLINE
+========================= */
+
+#result-text{
+  padding: 16px;
+  border-bottom: 1px solid #e1e4e8;
+  font-weight: bold;
+  text-align: center;
+}
+
+#result-card{
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+}

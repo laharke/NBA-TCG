@@ -195,7 +195,7 @@
         "image": "/static/imgs/players/barkley.jpeg",
         "team": "PhoenixSuns",
         "rarity": "legendary",
-        "border1": "#1521ab",
+        "border1": "#6923A1",
         "border2": "#ffffff",
         "holo": "false"
     },
@@ -205,7 +205,7 @@
         "image": "/static/imgs/players/jamesharden.jpg",
         "team": "HoustonRockets",
         "rarity": "legendary",
-        "border1": "#1521ab",
+        "border1": "#ab1518",
         "border2": "#ffffff",
         "holo": "false"
     },
@@ -235,7 +235,7 @@
         "image": "/static/imgs/players/booker.jpeg",
         "team": "PhoenixSuns",
         "rarity": "rare",
-        "border1": "#1521ab",
+        "border1": "#772894",
         "border2": "#ffffff",
         "holo": "true"
     },
@@ -245,7 +245,7 @@
         "image": "/static/imgs/players/bridges.jpeg",
         "team": "NewYorkKnicks",
         "rarity": "common",
-        "border1": "#1521ab",
+        "border1": "#E68717",
         "border2": "#ffffff",
         "holo": "true"
     },
@@ -255,7 +255,7 @@
         "image": "/static/imgs/players/barnes.jpg",
         "team": "SacramentoKings",
         "rarity": "common",
-        "border1": "#1521ab",
+        "border1": "#6023A8",
         "border2": "#ffffff",
         "holo": "true"
     },
@@ -275,7 +275,7 @@
         "image": "/static/imgs/players/adebayo.jpg",
         "team": "MiamiHeat",
         "rarity": "rare",
-        "border1": "#1521ab",
+        "border1": "#BA1A1A",
         "border2": "#ffffff",
         "holo": "false"
     },
@@ -284,8 +284,8 @@
         "name": "Tyler Hero",
         "image": "/static/imgs/players/tylerhero.jpeg",
         "team": "rare",
-        "rarity": "legendary",
-        "border1": "#1521ab",
+        "rarity": "common",
+        "border1": "#BA1A1A",
         "border2": "#ffffff",
         "holo": "false"
     },
@@ -295,7 +295,7 @@
         "image": "/static/imgs/players/jasonwilliams.jpg",
         "team": "SacramentoKings",
         "rarity": "rare",
-        "border1": "#1521ab",
+        "border1": "#331C70",
         "border2": "#ffffff",
         "holo": "false"
     },
@@ -304,8 +304,8 @@
         "name": "Kevin Love",
         "image": "/static/imgs/players/klove.jpeg",
         "team": "ClevelandCavaliers",
-        "rarity": "rare",
-        "border1": "#1521ab",
+        "rarity": "epic",
+        "border1": "#C41212",
         "border2": "#ffffff",
         "holo": "false"
     },
@@ -315,8 +315,8 @@
         "image": "/static/imgs/players/nash.jpg",
         "team": "PhoenixSuns",
         "rarity": "legendary",
-        "border1": "#1521ab",
-        "border2": "#ffffff",
+        "border1": "#8832BF",
+        "border2": "#808080",
         "holo": "false"
     },
     {

@@ -10,6 +10,7 @@ from pathlib import Path
 from django.conf import settings
 import os
 from django.utils import timezone
+from datetime import timedelta
 from .utils.cards import *
 from .models import Card, Trade
 from django.forms.models import model_to_dict
@@ -99,6 +100,22 @@ def register_view(request):
 
 def open_pack(request):
     # Primero aca tengo que hacer el chequeo leyendo en base de datos si pasaron 24 horas del ultimo pack open.
+    # Creo quet nidra uqe que considerar el edge case de que este vacio last_pack_time para nuevos usaurios
+
+
+    result = timezone.now() - request.user.last_pack_time 
+    if result < timedelta(hours=24):
+        remaining = timedelta(hours=24) - result
+
+        # horas, minutos y segundos
+        total_seconds = int(remaining.total_seconds())
+        hours = total_seconds // 3600
+        minutes = (total_seconds % 3600) // 60
+        seconds = total_seconds % 60
+        remaining_str = f"{hours:02}:{minutes:02}:{seconds:02}"
+        return JsonResponse({"result": "fail", "remainingHours": remaining_str})
+
+
     cards = list(Card.objects.all())
     cards = random.sample(cards, 5)
 
@@ -110,7 +127,7 @@ def open_pack(request):
 
     response_cards = [model_to_dict(card) for card in cards]   
 
-    return JsonResponse({"cards": response_cards})
+    return JsonResponse({"result": "success", "cards": response_cards})
 
 @login_required
 def pack_view(request):
@@ -326,6 +343,44 @@ def duel_offline_view(request):
     }
     return render(request, 'duel_offline.html', context)
 
+@login_required
+def compute_game_results_offline(request):
+
+    data = json.loads(request.body)
+
+    user = request.user
+    result = data.get("result")
+    selectedCard = data.get("selectedCard")
+    selectedCard = Card.objects.get(id=selectedCard)
+
+
+    # Ya esat andando esto ahy que agrar la lgocia del duel
+    # Si gano le damos una carta diferente a la que apostó  rarity
+    if(result == 'W'):
+        wonCard = Card.objects.exclude(id=selectedCard.card_id).filter(rarity = selectedCard.rarity).order_by("?").first()
+        
+        add_card(user, wonCard)
+        wonCard = model_to_dict(wonCard)
+        #wonCard = serializers.serialize("json", [wonCard])
+
+        # Hay que agregarle al carta
+        #Le resto uno al wants - requested card
+        
+        #user, card
+        print(wonCard)
+        return JsonResponse({"result": "success", "cardData": wonCard}, status=200)
+
+        
+    else:
+
+        # Si perdes tengo que restarle uno en la carta y devolver que carta PERDIO 
+        UserCard.objects.filter(
+            user=user,
+            card=selectedCard
+        ).update(quantity=F('quantity') - 1)
+
+        lostCard = model_to_dict(selectedCard)
+        return JsonResponse({"result": "success", "cardData": lostCard}, status=200)
 
 # Una api que le pidas cualquier cantidad de preguntas que se te cante y te las devuelva pueden ser 10 o 5 
 @login_required
@@ -344,7 +399,8 @@ def get_questions_api(request, total):
 
     #TENGO QUE ENCRIPTAR LA ANSWER, Y DESENCRIPTARLA EN JS? SE PEUDE ESTO ?
     for q in questions:
-
+        #hacerle shuffle q
+        random.shuffle(q['options'])
         data.append({
             "question": q['question'],
             "options": q['options'],

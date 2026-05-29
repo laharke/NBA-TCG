@@ -47,7 +47,6 @@ function startGame(){
     // Quen o me copa mucho pero bueno
 
     loadQuestions().then(() => {
-        console.log(game);
         
         // Aca iria la logica del game?
         // Un loop por las questions ya no ahrdcore.
@@ -75,7 +74,7 @@ function showQuestion() {
     let optionsHtml = ""
 
     q.options.forEach(option => {
-        optionsHtml += `<button onclick="answer('${option}')">${option}</button>`
+        optionsHtml += `<div class='answerOption'  onclick="answer('${option}')">${option}</div>`
     })
 
     document.getElementById("options").innerHTML = optionsHtml
@@ -86,7 +85,8 @@ function showQuestion() {
 function startTimer() {
 
     let time = 10
-
+    document.getElementById("timer").innerText = time
+    
     game.timer = setInterval(() => {
 
         document.getElementById("timer").innerText = time
@@ -135,8 +135,10 @@ function finishGame(){
     if (game.score >= 7){
         // Aca podria hacer que se agrege la CARTA que te dan, necseiot una API que te deuvle una random CARD.
         resultText = "Congratulations! You won! Heres the card you won: ";
+        result = 'W';
     }else{
         resultText = "Oh no, you lost! Your " + game.selectedCardText + " is gone.";
+        result = 'L';
     }
 
 
@@ -144,6 +146,39 @@ function finishGame(){
 
     // Abajo de esto tengo que hacer un api request a una case que agregre o saque la carta que gano o perdió.
     // Que sea uno solo y haga las dos cosas.
+    // En realidad hay que hacer el llamado antes para saber que carta GANO? 
+
+
+    fetch('/duel/offline/compute_game_results/', {
+        method: 'POST',
+        headers: {
+          'X-CSRFToken': getCookie('csrftoken'),
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            'result': result,
+            'selectedCard': game.selectedCard
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+
+        console.log(data)
+        if(data.result == 'success'){
+            // Aca muestro la carta que ganaste o la que perdiste.
+            // Tengo que usar el HTML element de la card para mostrarla
+            // Ya sea la que perdió o la que ganó
+
+            // Necesito enviar la cardData desde el front para generarl acarta con esa funcion y apendarla al html            
+            cardHtml = generteCard(data.cardData);
+            $('#result-card').append(cardHtml);
+
+        }else{
+            showAlert('error', data.error);
+        }
+
+    })
+    .catch(err => console.error(err));
 
 
 }
